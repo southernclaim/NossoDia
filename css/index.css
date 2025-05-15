@@ -1,0 +1,207 @@
+/* style.css */
+body {
+    font-family: 'Arial', cursive;
+    background-color: #ffebee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-image: radial-gradient(#ffcdd2 2px, transparent 2px);
+    background-size: 20px 20px;
+    overflow-x: hidden;
+}
+
+.envelope {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.carta {
+    background-color: #fff9f9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    border: 1px solid #ffcdd2;
+    position: relative;
+    overflow: hidden;
+}
+
+.carta:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+}
+
+.carta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3, #ff758c);
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1 {
+    color: #d23669;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(210, 54, 105, 0.2);
+}
+
+.coracoes span {
+    font-size: 1.8em;
+    margin: 0 5px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.coracoes span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.coracoes span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.data {
+    font-weight: bold;
+    color: #ff758c;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.conteudo p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.memoria {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.memoria p {
+    color: #d23669;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 80px;
+    border: 1px dashed #ff7eb3;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: inherit;
+    background-color: #fffafa;
+    margin-top: 10px;
+}
+
+.assinatura {
+    text-align: right;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #d23669;
+    margin-top: 30px;
+}
+
+.elementos-romanticos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+.flor {
+    animation: float 3s ease-in-out infinite;
+}
+
+.flor:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.coracao-pulsante {
+    animation: pulse 1s ease infinite;
+}
+
+#botaoMusica {
+    background-color: #ff758c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
+}
+
+#botaoMusica:hover {
+    background-color: #d23669;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 117, 140, 0.6);
+}
+
+.contador {
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contador p {
+    margin: 0;
+    color: #d23669;
+    font-weight: bold;
+}
+
+#tempoRelacionamento {
+    font-size: 1.3em;
+    color: #ff758c;
+    margin-top: 5px;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .carta {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .conteudo p {
+        font-size: 1em;
+    }
+}
