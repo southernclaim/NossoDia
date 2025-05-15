@@ -1,17 +1,16 @@
-// script.js
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Data do início do relacionamento (substitua pela sua data)
-    const dataInicio = new Date('2023-12-16'); // Formato: YYYY-MM-DD
+  
+    const dataInicio = new Date('2023-12-16'); 
     const botaoMusica = document.getElementById('botaoMusica');
     const musica = document.getElementById('musica');
     let musicaTocando = false;
 
-    // Atualiza o contador de tempo do relacionamento
     function atualizarContador() {
         const agora = new Date();
         const diferenca = agora - dataInicio;
         
-        // Calcula meses, dias, horas e minutos
+
         const meses = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 30.44));
         const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24);
         const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Player de música romântica
+
     botaoMusica.addEventListener('click', function() {
         if (musicaTocando) {
             musica.pause();
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         musicaTocando = !musicaTocando;
     });
 
-    // Efeito de chuva de corações
+  
     function criarChuvaDeCoracoes() {
         const coracao = document.createElement('div');
         coracao.innerHTML = '❤️';
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Adiciona estilos dinâmicos para a chuva de corações
     const style = document.createElement('style');
     style.innerHTML = `
         @keyframes cair {
@@ -70,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Efeito de digitação no texto principal
     function efeitoDigitacao() {
         const textos = document.querySelectorAll('.conteudo p:not(.data):not(.assinatura)');
         textos.forEach((elemento, index) => {
@@ -79,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 let i = 0;
-                const velocidade = 30 + Math.random() * 20; // Velocidade aleatória
+                const velocidade = 30 + Math.random() * 20; 
                 
                 function digitar() {
                     if (i < textoOriginal.length) {
@@ -90,24 +87,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 digitar();
-            }, index * 1500); // Atraso entre parágrafos
+            }, index * 1500); 
         });
     }
 
-    // Inicializa tudo
     atualizarContador();
     setInterval(atualizarContador, 60000); // Atualiza a cada minuto
     setInterval(criarChuvaDeCoracoes, 300); // Cria corações a cada 300ms
     
-    // Inicia o efeito de digitação após um pequeno delay
     setTimeout(efeitoDigitacao, 1000);
 
-    // Mostra uma mensagem especial no console
     console.log("%cPara a pessoa mais especial do mundo! ❤️", 
         "color: #d23669; font-size: 16px; font-weight: bold;");
 });
 
-// Mensagem secreta ao clicar na carta
 document.querySelector('.carta').addEventListener('click', function() {
     const mensagens = [
         "Eu te amo mais que tudo!",
