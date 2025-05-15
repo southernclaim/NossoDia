@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     atualizarContador();
-    setInterval(atualizarContador, 60000); // Atualiza a cada minuto
-    setInterval(criarChuvaDeCoracoes, 300); // Cria corações a cada 300ms
+    setInterval(atualizarContador, 60000);
+    setInterval(criarChuvaDeCoracoes, 300);
     
     setTimeout(efeitoDigitacao, 1000);
 
